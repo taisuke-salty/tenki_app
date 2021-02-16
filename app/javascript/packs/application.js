@@ -3,9 +3,15 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= require jquery
+//= require jquery_ujs
+
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+
+require('jquery')
+
 console.log('Hello World from Webpacker')
 // require('./hello_react.jsx')    // この行を追加
 
@@ -19,3 +25,5 @@ console.log('Hello World from Webpacker')
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+console.log('hoge')
