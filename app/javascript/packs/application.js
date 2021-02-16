@@ -11,6 +11,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 require('jquery')
+require('test.js')
 
 console.log('Hello World from Webpacker')
 // require('./hello_react.jsx')    // この行を追加
