@@ -7,11 +7,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-    # <%= javascript_pack_tag 'hello_react' %>
+
+
 
   </head>
 
   <body>
     <%= yield %>
+    <%= react_component("hello_react", name: 'React') %>
+    <%= react_component("Counter", count: 10) %>
+
+    <%= react_component("FollowButton",
+                          relationship: 'Follow' ) %>
+
+
   </body>
 </html>
