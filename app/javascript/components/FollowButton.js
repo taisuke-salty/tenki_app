@@ -15,9 +15,6 @@ class FollowButton extends React.Component {
       url: `/relationships`, // リクエスト先のURL
       dataType: 'json', // リクエストの種類
       contentType: 'application/json', // レスポンスの種類
-      data: JSON.stringify({
-        followed_id: this.props.user.id
-      }),
       beforeSend: function(xhr) {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       }
@@ -32,20 +29,17 @@ class FollowButton extends React.Component {
   unfollow = ()=> {
           {/* relationshipがnullならば文字列「Unfollow」が変える。逆は'follow'が変える */}
     $.ajax({
-      type: 'DELETE', // HTTPのメソッド
-      url: `/relationships`, // リクエスト先のURL
+      type: 'POST', // HTTPのメソッド
+      url: `/test`, // リクエスト先のURL
       dataType: 'json', // リクエストの種類
       contentType: 'application/json', // レスポンスの種類
-      data: JSON.stringify({
-        followed_id: this.props.user.id
-      }),
       beforeSend: function(xhr) {
         xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
       }
     }).then((response)=> {
       const relationship = response
       this.setState({
-        relationship
+        relationship: null
       })
     })
 
@@ -53,7 +47,7 @@ class FollowButton extends React.Component {
 
   render () {
     const isFollowing = this.state.relationship !== null
-
+    // relationshipがnull(followしていない)のときFLASE、nullでない（followしている）ときTRUE
     return (
       <React.Fragment>
         <button onClick={ isFollowing ? this.unfollow : this.follow}>
