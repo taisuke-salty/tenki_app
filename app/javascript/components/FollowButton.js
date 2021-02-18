@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes, { string } from "prop-types"
+import classnames from 'classnames'
+
 class FollowButton extends React.Component {
   constructor(props) {
     super(props)
@@ -59,9 +61,19 @@ class FollowButton extends React.Component {
   render () {
     const isFollowing = this.state.relationship !== null
     // relationshipがnull(followしていない)のときFLASE、nullでない（followしている）ときTRUE
+    const className = classnames('btn', {
+      'btn-danger': isFollowing,
+      'btn-primary': !isFollowing
+    })
+
     return (
       <React.Fragment>
-        <button onClick={ isFollowing ? this.unfollow : this.follow} disabled={ this.state.loading }>
+        <button
+          className={ className }
+          onClick={ isFollowing ? this.unfollow: this.follow }
+          disabled={ this.state.loading }
+        >
+
           { isFollowing ? 'Unfollow' : 'Follow' }
           {/* isFollowingがtureならUnfollow */}
 
