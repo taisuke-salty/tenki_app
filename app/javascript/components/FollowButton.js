@@ -5,11 +5,16 @@ class FollowButton extends React.Component {
     super(props)
 
     this.state = {
+      loading: false,
       relationship: props.relationship
     }
   }
 
   follow = () => {
+    this.setState({
+      loading: true
+    })
+
     $.ajax({
       type: 'POST', // HTTPのメソッド
       url: `/relationships`, // リクエスト先のURL
@@ -21,12 +26,17 @@ class FollowButton extends React.Component {
     }).then((response)=> {
       const relationship = response
       this.setState({
+        loading: false,
         relationship
       })
     })
   }
 
   unfollow = ()=> {
+    this.setState({
+      loading: true
+    })
+
           {/* relationshipがnullならば文字列「Unfollow」が変える。逆は'follow'が変える */}
     $.ajax({
       type: 'POST', // HTTPのメソッド
@@ -39,6 +49,7 @@ class FollowButton extends React.Component {
     }).then((response)=> {
       const relationship = response
       this.setState({
+        loading: false,
         relationship: null
       })
     })
@@ -50,7 +61,7 @@ class FollowButton extends React.Component {
     // relationshipがnull(followしていない)のときFLASE、nullでない（followしている）ときTRUE
     return (
       <React.Fragment>
-        <button onClick={ isFollowing ? this.unfollow : this.follow}>
+        <button onClick={ isFollowing ? this.unfollow : this.follow} disabled={ this.state.loading }>
           { isFollowing ? 'Unfollow' : 'Follow' }
           {/* isFollowingがtureならUnfollow */}
 
