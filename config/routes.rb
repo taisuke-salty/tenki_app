@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'hello/index'
-  root to: 'hello#index'
-  post 'relationships'     => 'relationships#create'
-  post 'test'     => 'test#create'
+  root to: 'nikki#index'
 
+  resources :nikki do                     #tweets_controllerに対してのresourcesメソッド
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -6,6 +6,11 @@
 
 <h1>Ajax#index</h1>
 <p id="hoge">赤色になるよ</p>
+<%= react_component("hello_react", name: 'React') %>
+<%= react_component("Counter", count: 10) %>
+
+<%= react_component("FollowButton", relationship: nil ) %>
+
 
 <script>
   $("#hoge").css("color","red")
