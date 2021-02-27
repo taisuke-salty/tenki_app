@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'application' %>
 <header>
 <div class="navbar">
   <div class="logo">
@@ -23,13 +24,12 @@
 
 <main>
   <div class="main-frame">
-  <%= Time.current %>
-
     <div class="main-left">
-      <h2 class="index-title"><%= Date.today %>のあなた</h2>
+      <h2 class="index-title"><%= @date1 %>のあなた</h2>
       <div class="condition">
         <div class="evaluation-area">
           <p class="index-title">評価</p>
+          <%= react_component("evaluation") %>
           <div class="evaluation-img-area">
             <%= image_tag "happy1@2x.png", class:"evaluation-img" %>
           </div>
