@@ -29,10 +29,7 @@
       <div class="condition">
         <div class="evaluation-area">
           <p class="index-title">評価</p>
-          <%= react_component("evaluation") %>
-          <div class="evaluation-img-area">
-            <%= image_tag "happy1@2x.png", class:"evaluation-img" %>
-          </div>
+          <%= react_component("Evaluation", num: @evaluation) %>
         </div>
         <div class="motivation-area">
           <p class="index-title">モチベーション</p>
