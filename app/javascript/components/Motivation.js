@@ -1,68 +1,39 @@
 import React from "react"
 import PropTypes from "prop-types"
+import NotMotivatedImg from './NotMotivatedImg'
+import MotivatedImg from './MotivatedImg'
+
 class Motivation extends React.Component {
+
+  // motivationArea = () => {
+  //   let mot = this.props.num
+  //   let notMot = 4-mot
+  //   // JS Push()メソッド： https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+
+
+
+  // }
+
+
+
   render () {
-    const srcImgs = ['/assets/motivated@2x.png','/assets/not_motivated@2x.png']
-    const imgArea = () =>{
-      var num = 0
-      switch(num){
-        case 0:
-          return  (
-          <div className="motivation-img-area">
-            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-          </div>);
-          break;
-
-          case 1:
-            return  (
-            <div className="motivation-img-area">
-              < img src='/assets/motivated@2x.png' className='motivation-img'  />
-              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-            </div>);
-            break;
-
-            case 2:
-              return  (
-              <div className="motivation-img-area">
-                < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-                < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-              </div>);
-              break;
-
-              case 3:
-                return  (
-                <div className="motivation-img-area">
-                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                  < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
-                </div>);
-                break;
-
-                case 4:
-                  return  (
-                  <div className="motivation-img-area">
-                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
-                  </div>);
-                  break;
-      }
+    let mot = this.props.num
+    let notMot = 4-mot
+    console.log(mot)
+    console.log(notMot)
+    const motivationArea= [];
+    for(let i = 1; i <= mot; i += 1 ){
+      motivationArea.push(<MotivatedImg/>);
     }
+    for(let i = 1; i <= notMot; i += 1 ){
+      motivationArea.push(<NotMotivatedImg/>);
+    }
+
     return (
       <React.Fragment>
-        {/* Motivation: {this.props.motivation} */}
         <div className="motivation-area">
           <p className="index-title">モチベーション</p>
-            {imgArea(0)}
+          {motivationArea}
         </div>
       </React.Fragment>
     );
