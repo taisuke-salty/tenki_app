@@ -31,15 +31,7 @@
           <p class="index-title">評価</p>
           <%= react_component("Evaluation", num: @evaluation) %>
         </div>
-        <div class="motivation-area">
-          <p class="index-title">モチベーション</p>
-          <div class="motivation-img-area">
-            <%= image_tag  "motivated@2x.png", class:"motivation-img"  %>
-            <%= image_tag  "motivated@2x.png", class:"motivation-img"  %>
-            <%= image_tag  "not_motivated@2x.png", class:"motivation-img"  %>
-            <%= image_tag  "not_motivated@2x.png", class:"motivation-img"  %>
-          </div>
-        </div>
+        <%= react_component("Motivation", num: @motivation) %>
       </div>
       <div class="emotion-aggregate">
         <div class="index-title">感情カードの割合</div>

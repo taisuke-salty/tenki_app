@@ -13,7 +13,7 @@ class Evaluation extends React.Component {
     // const img2 = '/assets/happy2@2x.png'
     // const img3 = '/assets/happy3.png'
     // const img4 = '/assets/happy4.png'
-    // const evaluationImg()=>{
+    // const evaluationImg = ()=>{
     //   switch(this.prop.evaluation){
     //     case 1:
     //       return img1
