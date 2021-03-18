@@ -44,279 +44,34 @@
         <div class="cards-frame" >
           <p class="index-title">楽しい</p>
           <div class="cards-area">
-          <%= react_component("Card", cardDate: @cardDate, cardText: @cardText, cardEmt: @cardEmt) %>
-
-
-
-            <div class="card card-happy">
-              <div class="card-emotion emotion-happy">
-                楽しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-happy">
-              <div class="card-emotion emotion-happy">
-                楽しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-happy">
-              <div class="card-emotion emotion-happy">
-                楽しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-happy">
-              <div class="card-emotion emotion-happy">
-                楽しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-happy">
-              <div class="card-emotion emotion-happy">
-                楽しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
+            <% @cardsHappy.each do |card| %>
+              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+            <% end %>
           </div>
         </div>
         <div class="cards-frame" >
           <p class="index-title">嬉しい</p>
           <div class="cards-area">
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-grad">
-              <div class="card-emotion emotion-grad">
-                嬉しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
+            <% @cardsGrad.each do |card| %>
+              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+            <% end %>
           </div>
         </div>
         <div class="cards-frame" >
           <p class="index-title">悲しい</p>
           <div class="cards-area">
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
-            <div class="card card-sad">
-              <div class="card-emotion emotion-sad">
-                悲しい
-              </div>
-              <div class="card-day day-1">
-                日時：2020/11/13
-              </div>
-              <div class="card-detail-title">詳細：</div>
-              <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-              </div>
-            </div>
+            <% @cardsSad.each do |card| %>
+              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+            <% end %>
           </div>
         </div>
       </div>
       <div class="cards-frame" >
         <p class="index-title">怒り</p>
         <div class="cards-area">
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
-          <div class="card card-angry">
-            <div class="card-emotion emotion-angry">
-              怒り
-            </div>
-            <div class="card-day day-1">
-              日時：2020/11/13
-            </div>
-            <div class="card-detail-title">詳細：</div>
-            <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
-            </div>
-          </div>
+          <% @cardsAngry.each do |card| %>
+            <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+          <% end %>
         </div>
       </div>
     </div>
