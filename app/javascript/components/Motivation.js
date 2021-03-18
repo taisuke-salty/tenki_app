@@ -17,6 +17,7 @@ class Motivation extends React.Component {
 
 
   render () {
+
     let mot = this.props.num
     let notMot = 4-mot
     console.log(mot)
