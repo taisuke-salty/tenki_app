@@ -3,33 +3,33 @@ class NikkiController < ApplicationController
     @date1 = Date.current.strftime("%Y/%m/%d")
     @evaluation = 3
     @motivation = 2
-    cardDate = Date.new(2020,11,13).strftime("%Y/%m/%d")
+    # cardDate = Date.new(2020,11,13).strftime("%Y/%m/%d")
     # @cardText ="昔の友だちとリモート飲み。懐かしくて楽しかったー。"
     # @cardEmt = 0
 
     @cardsHappy = [
       {
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "昔の友だちとリモート飲み。懐かしくて楽しかったー。",
         cardEmt: 0
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト2テキスト2テキスト2テキスト2テキスト2テキスト2",
         cardEmt: 0
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト3テキスト3テキスト3テキスト3テキスト3テキスト3",
         cardEmt: 0
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト4テキスト4テキスト4テキスト4テキスト4テキスト4",
         cardEmt: 0
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト5テキストテキストテキストテキストテキスト",
         cardEmt: 0
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト6テキストテキストテキスト",
         cardEmt: 0
       }
@@ -37,23 +37,23 @@ class NikkiController < ApplicationController
 
     @cardsGrad= [
       {
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "昔の友だちとリモート飲み。懐かしくて楽しかったー。",
         cardEmt: 1
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト2テキスト2テキスト2テキスト2テキスト2テキスト2",
         cardEmt: 1
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト3テキスト3テキスト3テキスト3テキスト3テキスト3",
         cardEmt: 1
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト4テキスト4テキスト4テキスト4テキスト4テキスト4",
         cardEmt: 1
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト5テキストテキストテキストテキストテキスト",
         cardEmt: 1
       }
@@ -61,34 +61,34 @@ class NikkiController < ApplicationController
 
     @cardsSad= [
       {
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "昔の友だちとリモート飲み。懐かしくて楽しかったー。",
         cardEmt: 2
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト2テキスト2テキスト2テキスト2テキスト2テキスト2",
         cardEmt: 2
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト3テキスト3テキスト3テキスト3テキスト3テキスト3",
         cardEmt: 2
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト4テキスト4テキスト4テキスト4テキスト4テキスト4",
         cardEmt: 2
       }
     ]
     @cardsAngry= [
       {
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "昔の友だちとリモート飲み。懐かしくて楽しかったー。",
         cardEmt: 3
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト2テキスト2テキスト2テキスト2テキスト2テキスト2",
         cardEmt: 3
       },{
-        cardDate: cardDate,
+        cardDate: @date1,
         cardText: "テキスト3テキスト3テキスト3テキスト3テキスト3テキスト3",
         cardEmt: 3
       }
