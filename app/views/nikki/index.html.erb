@@ -36,10 +36,9 @@
       <div class="emotion-aggregate">
         <div class="index-title">感情カードの割合</div>
 
-        <%= react_component("PieChart") %>
 
         <div class="emotion-graph">
-          <%= image_tag  "chart.png", class:"emotion-graph-img"  %>
+          <%= react_component("PieChart", cardsHappy: @cardsHappy, cardsGrad: @cardsGrad, cardsSad: @cardsSad, cardsAngry: @cardsAngry) %>
         </div>
       </div>
       <div class="emotion-card-section">

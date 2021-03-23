@@ -8,36 +8,30 @@ class PieChart extends React.Component {
 
     this.state = {
       options: {
-        chart: {
-          id: "basic-bar"
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-        }
+        labels: ['楽しい', '嬉しい', '悲しい', '怒り'],
+        colors: ['#FADE03','#33691E', '#0D47A0', '#B71C1C']
       },
       series: [
-        {
-          name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
-        }
-      ]
+        this.props.cardsHappy.length,
+        this.props.cardsGrad.length,
+        this.props.cardsSad.length,
+        this.props.cardsAngry.length
+      ],
+
     };
   }
 
   render () {
+    console.log(this.props.cardsHappy)
     return (
       <React.Fragment>
-        <div className="app">
-          <div className="row">
-            <div className="mixed-chart">
+        <div className="emotion-graph-img">
               <Chart
                 options={this.state.options}
                 series={this.state.series}
-                type="bar"
+                type="pie"
                 width="500"
               />
-            </div>
-          </div>
         </div>
       </React.Fragment>
     );
