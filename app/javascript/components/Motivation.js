@@ -30,6 +30,9 @@ class Motivation extends React.Component {
       motivationArea.push(<NotMotivatedImg/>);
     }
 
+    var today = new Date()
+    console.log(today.getFullYear())
+
     return (
       <React.Fragment>
         <div className="motivation-area">

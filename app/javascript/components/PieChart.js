@@ -22,7 +22,6 @@ class PieChart extends React.Component {
   }
 
   render () {
-    console.log(this.props.cardsHappy)
     return (
       <React.Fragment>
         <div className="emotion-graph-img">
