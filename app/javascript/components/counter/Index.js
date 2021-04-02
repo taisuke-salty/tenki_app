@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-class Index extends React.Component {
+
+class Counter extends React.Component {
   render () {
     return (
-      <React.Fragment>
-      </React.Fragment>
+      <div />
     );
   }
 }
 
-export default Index
+export default Counter

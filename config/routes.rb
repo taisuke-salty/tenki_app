@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'nikki#index'
+  # root to: 'nikki#index'
+  root to: 'hello#index'
 
   resources :nikki do                     #tweets_controllerに対してのresourcesメソッド
   end
