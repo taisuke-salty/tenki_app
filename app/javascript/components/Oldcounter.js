@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-class Counter extends React.Component {
+class Oldcounter extends React.Component {
   constructor(props) {
     super(props)
 
@@ -34,12 +34,12 @@ class Counter extends React.Component {
   }
 }
 
-Counter.defaultProps ={
+Oldcounter.defaultProps ={
   count: 0
 }
-Counter.PropTypes ={
+Oldcounter.PropTypes ={
   count: PropTypes.number
 }
 
 
-export default Counter
+export default Oldcounter

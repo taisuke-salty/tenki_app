@@ -27,7 +27,7 @@ var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
 
-import Counters from '../counters'
-window.Counters = Counters
+import Counter from '../counter'
+window.Counter = Counter
 
 console.log('hoge');
