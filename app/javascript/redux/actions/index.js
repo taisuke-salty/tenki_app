@@ -1,6 +1,7 @@
 import {
   COUNT_UP,
-  COUNT_DOWN
+  COUNT_DOWN,
+  CHANGE_NAME
 } from '../constants/action_types'
 
 export const countUp = () => {
@@ -12,5 +13,11 @@ export const countUp = () => {
 export const countDown = () => {
   return {
     type: COUNT_DOWN
+  }
+}
+
+export const changeName = () => {
+  return {
+    type: CHANGE_NAME
   }
 }

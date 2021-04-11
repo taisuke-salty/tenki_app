@@ -1,24 +1,22 @@
 import { connect } from 'react-redux'
-import Counter from '../components/counter'
+import Name from '../components/name'
 import {
-  countUp,
-  countDown
+  changeName
 } from '../../actions'
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count.count
+    name: state.name.name
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickCountUp: () => dispatch(countUp()),
-    onClickCountDown: () => dispatch(countDown())
+    onClickChangeName: () => dispatch(changeName()),
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Counter)
+)(Name)
