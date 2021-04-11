@@ -188,3 +188,6 @@ render () {
 <div class="card-detail-text text-card1">昔の友だちとリモート飲み。<br>懐かしくて楽しかったー。
 </div>
 </div>
+
+
+<%= image_tag  "calender_sample.png" %>

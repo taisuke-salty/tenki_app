@@ -1,7 +1,7 @@
 import {
   COUNT_UP,
   COUNT_DOWN
-} from '../counter/constants/action_types'
+} from '../constants/action_types'
 
 const initialState = {
   count: 0
