@@ -1,3 +1,37 @@
 ●JSのパッケージ管理について
 →railsはyarnで管理しているようなので、今後JSのライブラリを入れたりするときはyarnでする。
 （調べてnpmが出てきたときは、npmとyarnの対応表をネットで調べて対応可能。）
+
+
+scr
+ View
+  container
+  components
+ state
+  store
+  counter
+    action
+    reducer
+  name
+
+
+ユーザー
+(→devise）
+
+　地域
+　　 (zip-code
+    started at
+    ended at)→引っ越し等で移動すること（ユーザーが地域を複数持つことは後で考える）
+　ID
+　名前
+
+評価
+　評価
+　モチベーション　
+　日付
+
+カード
+　
+天気（API）
+
+

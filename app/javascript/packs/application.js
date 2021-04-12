@@ -27,9 +27,10 @@ var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
 
-import Counter from '../redux/counter'
+import Counter from '../reduxPractice/counter'
 window.Counter = Counter
-import Name from '../redux/name'
+//
+import Name from '../reduxPractice/name'
 window.Name = Name
 
 console.log('hoge');
