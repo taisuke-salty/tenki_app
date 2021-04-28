@@ -17,7 +17,6 @@ scr
 
 ユーザー
 (→devise）
-
 　地域
 　　 (zip-code
     started at
