@@ -55,3 +55,6 @@ gem 'react-rails', '~> 2.6.1'
 
 
 gem 'jquery-rails'
+
+gem 'devise'
+gem 'omniauth-twitter'
