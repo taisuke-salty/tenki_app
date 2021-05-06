@@ -14,7 +14,7 @@ scr
     reducer
   name
 
-
+＜DB設計＞
 ユーザー
 (→devise）
 　地域
@@ -24,13 +24,33 @@ scr
 　ID
 　名前
 
-評価
-　評価
-　モチベーション　
-　日付
+condition
+　evaluation（型：integer)→その日が良かったか悪かったか
+　motivation　（型：integer)
+　evaluate_on(型：Date)→評価日
 
-カード
-　
+card
+　feeling(型：integer)→喜怒哀楽
+　feel_on（型：time)→感情発生日時
+　detail（型：text）
+
 天気（API）
 
+＜コントローラー＞
+○conditionコントローラー
+action
+　・Post
+　・edit
+　・destroy
+
+○cardコントローラー
+action
+　・Post
+　・edit
+　・destroy
+
+○analysisコントローラ
+action
+　・show?(カレンダーで選択された日の評価やカードを一覧にするページの表示)
+　・show?(指定された期間のデータをグラフにする)
 
