@@ -12,6 +12,47 @@
 
   </head>
 
+  <header>
+  <div class="navbar">
+    <div class="logo">
+      <div class="logo-img">
+        <%= image_tag "app-logo.png", alt:"あなたと天気" %>
+      </div>
+      <div class="logo-letter">
+        <p>あなたと天気</p>
+      </div>
+    </div>
+    <div class="navbar-nav">
+      <ul class="navbar-nav-ul">
+        <% if user_signed_in? %>
+        <!-- <strong><%= link_to current_user.username, pages_show_path %></strong> -->
+        <li class="nav-item">
+          <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', new_user_session_path %>
+          </li>
+        <% end %>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">ログイン</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#regist-section">新規登録</a>
+        </li>
+        -->
+      </ul>
+    </div>
+
+  </div>
+  </header>
+
   <body id="index-back">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
