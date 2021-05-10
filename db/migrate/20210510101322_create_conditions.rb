@@ -3,6 +3,7 @@ class CreateConditions < ActiveRecord::Migration[6.0]
     create_table :conditions do |t|
       t.integer :evaluation
       t.integer :motivation
+      t.date :evaluate_on
 
       t.timestamps
     end
