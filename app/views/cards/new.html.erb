@@ -1,2 +1,19 @@
-<h1>Cards#new</h1>
-<p>Find me in app/views/cards/new.html.erb</p>
+<div>
+  <h2>評価</h2>
+  <%= form_tag("/cards/create") do %>
+    <p>日付：
+    <input type="datetime-local" name="feel_on" value="<%=@card_time%>">
+
+    <p>感情：
+    <select name="feeling">
+      <option value="1">楽しい</option>
+      <option value="2">嬉しい</option>
+      <option value="3">悲しい</option>
+      <option value="4">怒り</option>
+    </select></p>
+    <p>詳細：
+    <textarea></textarea></p>
+    <input type="submit" value="投稿">
+  <% end %>
+</div>
+

@@ -9,5 +9,7 @@ class CardsController < ApplicationController
   end
 
   def new
+    @card_time = Time.current.strftime("%Y-%m-%dT%H:%M")
+    # binding.pry
   end
 end
