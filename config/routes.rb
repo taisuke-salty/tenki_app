@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'card/index'
-  get 'card/show'
-  get 'card/edit'
-  get 'card/new'
+
+  get 'cards/index'
+  get 'cards/show'
+  get 'cards/edit'
+  get 'cards/new'
   get "conditions/index" => "conditions#index"    #使用しない→後ほど削除
   get "conditions/new" => "conditions#new"
   post "conditions/create" => "conditions#create"
