@@ -1,8 +1,7 @@
 class NikkiController < ApplicationController
+  before_action :sign_in_required, only: [:index]
+
   def index
-
-
-
     @date1 = Date.current.strftime("%Y/%m/%d")
     @evaluation = 3
     @motivation = 2
@@ -96,5 +95,8 @@ class NikkiController < ApplicationController
         cardEmt: 3
       }
     ]
+  end
+
+  def show
   end
 end

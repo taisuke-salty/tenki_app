@@ -1,2 +1,24 @@
-<h1>Conditions#new</h1>
-<p>Find me in app/views/conditions/new.html.erb</p>
+<div>
+  <h2>評価</h2>
+  <%= form_tag("/conditions/create") do %>
+    <p>日付：
+    <input type="date" name="evaluate_on" value="<%=@evaluate_day%>">
+
+    <p>評価：
+    <select name="evaluation">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select></p>
+    <p>モチベーション：
+    <select name="motivation">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    </select>
+    </p>
+    <input type="submit" value="送信">
+  <% end %>
+</div>

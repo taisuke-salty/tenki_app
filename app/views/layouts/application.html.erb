@@ -24,13 +24,20 @@
     </div>
     <div class="navbar-nav">
       <ul class="navbar-nav-ul">
+      <%= user_signed_in? %>
         <% if user_signed_in? %>
-        <!-- <strong><%= link_to current_user.username, pages_show_path %></strong> -->
+        <strong><%# link_to current_user.username, pages_show_path %></strong>
         <li class="nav-item">
           <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '評価', "/conditions/new", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'カード投稿', "/cards/new", class: "nav-link" %>
         </li>
         <% else %>
           <li class="nav-item">
@@ -57,8 +64,16 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <div class="main-frame">
     <%= yield %>
+  </div>
 
-
+  <footer>
+  <div class="footer-main">
+    <div class="cp">
+      Copyright © Taisuke Sato
+    </div>
+  </div>
+</footer>
   </body>
 </html>

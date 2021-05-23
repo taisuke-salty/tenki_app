@@ -1,2 +1,8 @@
-<h1>Conditions#index</h1>
-<p>Find me in app/views/conditions/index.html.erb</p>
+<div>
+<% @conditions.each do |condition| %>
+  <div>-------------------------------</div>
+  <div><%=link_to(condition.evaluate_on.strftime("%Y/%m/%d"), "/conditions/#{condition.id}") %></div>
+  <div>評価：<%= condition.evaluation %></div>
+  <div>モチベーション：<%= condition.motivation %></div>
+<% end %>
+</div>
