@@ -1,5 +1,5 @@
 <div>
-  <h2>評価</h2>
+  <h2>カード</h2>
   <%= form_tag("/cards/create") do %>
     <p>日付：
     <input type="datetime-local" name="feel_on" value="<%=@card_time%>">
@@ -12,7 +12,7 @@
       <option value="4">怒り</option>
     </select></p>
     <p>詳細：
-    <textarea></textarea></p>
+    <textarea name="detail"></textarea></p>
     <input type="submit" value="投稿">
   <% end %>
 </div>

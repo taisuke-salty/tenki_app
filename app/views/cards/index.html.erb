@@ -1,2 +1,8 @@
-<h1>Cards#index</h1>
-<p>Find me in app/views/cards/index.html.erb</p>
+<div>
+<% @cards.each do |card| %>
+  <div>-------------------------------</div>
+  <div><%=link_to(card.feel_on.strftime("%Y/%m/%d %H:%M"), "/cards/#{card.id}") %></div>
+  <div>感情：<%= card.feeling %></div>
+  <div>詳細：<%= card.detail %></div>
+<% end %>
+</div>

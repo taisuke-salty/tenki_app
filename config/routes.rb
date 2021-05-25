@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'cards/index'
-  get 'cards/show'
-  get 'cards/edit'
-  get 'cards/new'
+
   get "conditions/index" => "conditions#index"    #使用しない→後ほど削除
   get "conditions/new" => "conditions#new"
   post "conditions/create" => "conditions#create"
@@ -14,6 +11,7 @@ Rails.application.routes.draw do
 
   get "cards/index" => "cards#index"    #使用しない→後ほど削除
   get "cards/new" => "cards#new"
+  post "cards/create" => "cards#create"
   get "cards/:id/edit" => "cards#edit"
   post "cards/:id/update" => "cards#update"
   post "cards/:id/destroy" => "cards#destroy"
