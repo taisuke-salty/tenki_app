@@ -20,7 +20,9 @@ class ConditionsController < ApplicationController
     evaluation = params[:evaluation]
     evaluate_on = params[:evaluate_on]
 
-    @condition = Condition.find_or_initialize_by(evaluate_on: evaluate_on)
+    @condition = Condition.find_or_initialize_by(evaluate_on: evaluate_on
+                                                  user_id: current_user.id)
+    # TODO
     @condition.motivation = motivation
     @condition.evaluation = evaluation
       # binding.pry
