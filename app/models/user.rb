@@ -6,4 +6,7 @@ class User < ApplicationRecord
         :lockable
         #  :timeoutable
         # :confirmable
-        end
+
+  has_many :cards
+  has_many :conditions
+end
