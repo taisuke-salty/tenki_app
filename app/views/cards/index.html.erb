@@ -2,6 +2,7 @@
 <% @cards.each do |card| %>
   <div>-------------------------------</div>
   <div><%=link_to(card.feel_on.strftime("%Y/%m/%d %H:%M"), "/cards/#{card.id}") %></div>
+  <div>user_id: <%= card.user.id %></div>
   <div>感情：<%= card.feeling %></div>
   <div>詳細：<%= card.detail %></div>
 <% end %>
