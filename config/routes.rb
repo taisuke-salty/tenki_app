@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "cards/create" => "cards#create"
   get "cards/:id/edit" => "cards#edit"
   post "cards/:id/update" => "cards#update"
-  post "cards/:id/destroy" => "cards#destroy"
+  delete "cards/:id/destroy" => "cards#destroy"
   get "cards/:id" => "cards#show"
 
 

@@ -1,9 +1,12 @@
 class CardsController < ApplicationController
+before_action :set_card, only: [:show, :edit, :destroy]
+
   def index
     @cards = Card.all.order(feel_on: :desc)
   end
 
   def show
+
   end
 
   def edit
@@ -24,4 +27,15 @@ binding.pry
       render("cards/new")
     end
   end
+
+  def destroy
+    @card.destroy
+    redirect_to("/cards/index")
+  end
+
+  private
+    def set_card
+      @card = Card.find(params[:id])
+    end
+
 end
