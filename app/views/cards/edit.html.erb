@@ -1,2 +1,15 @@
-<h1>Cards#edit</h1>
-<p>Find me in app/views/cards/edit.html.erb</p>
+<div>
+  <h2>カード</h2>
+  <%= form_tag("/cards/:id/update") do %>
+    <p>日付：
+    <input type="datetime-local" name="feel_on" value="<%=@card_time%>"></p>
+
+    <p>感情：
+    <%= select(:card, :feeling,
+    {'楽しい' => 1, '嬉しい' => 2, '悲しい' => 3, '怒り' => 4}) %></p>
+
+    <p>詳細：
+    <textarea name="detail"><%= @card.detail %></textarea></p>
+    <input type="submit" value="投稿">
+  <% end %>
+</div>

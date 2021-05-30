@@ -10,17 +10,20 @@ before_action :set_card, only: [:show, :edit, :destroy]
   end
 
   def edit
+    @card_time = @card.feel_on.strftime("%Y-%m-%dT%H:%M")
+
   end
 
   def new
+
     @card_time = Time.current.strftime("%Y-%m-%dT%H:%M")
     # binding.pry
   end
 
   def create
-    @card = Card.new(feel_on: Time.parse(params[:feel_on]),
-                    feeling: params[:feeling],
-                    detail: params[:detail],
+    @card = Card.new(feel_on: Time.parse(card_params[:feel_on]),
+                    feeling: card_params[:feeling],
+                    detail: card_params[:detail],
                     user_id: current_user.id)
 
     if @card.save
@@ -41,6 +44,10 @@ before_action :set_card, only: [:show, :edit, :destroy]
   private
     def set_card
       @card = Card.find(params[:id])
+    end
+
+    def card_params
+      params.require(:card).permit(:feeling, :feel_on, :detail)
     end
 
 end

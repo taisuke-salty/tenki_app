@@ -54,3 +54,26 @@ action
 　・show?(カレンダーで選択された日の評価やカードを一覧にするページの表示)
 　・show?(指定された期間のデータをグラフにする)
 
+
+  <div>user_id: <%= card.user.id %></div>
+
+＜日時の扱いでの注意点＞
+①Ruby、Railsでの日時の扱い
+Ruby での
+Time.new(YYYY, MM, DD HH, MM, SS)
+Time.parse("YYYY-MM-DDThh:mm:ss")
+
+cf) TimeWithZone()
+
+②RailsとDBでのTime型、DATETIME型の定義の違い
+→Rails。。。。では
+
+https://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c https://docs.ruby-lang.org/ja/latest/method/Time/s/new.html 
+Ippei Shoji から 皆様 : (8:33 午後)
+ https://docs.ruby-lang.org/ja/latest/class/DateTime.html https://docs.ruby-lang.org/ja/latest/method/Time/s/parse.html
+
+DBのマイグレーション
+
+2021/5/25 進捗
+・Progate全部終えて白本
+・

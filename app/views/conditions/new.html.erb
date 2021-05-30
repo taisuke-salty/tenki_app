@@ -2,22 +2,13 @@
   <h2>評価</h2>
   <%= form_tag("/conditions/create") do %>
     <p>日付：
-    <input type="date" name="evaluate_on" value="<%=@evaluate_day%>">
+    <input type="date" name="condition[evaluate_on]" value="<%=@evaluate_day%>">
 
     <p>評価：
-    <select name="evaluation">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select></p>
+    <%= select(:condition, :evaluation, [1, 2, 3, 4]) %>
+    </p>
     <p>モチベーション：
-    <select name="motivation">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    </select>
+    <%= select(:condition, :motivation, [1, 2, 3, 4]) %>
     </p>
     <input type="submit" value="送信">
   <% end %>

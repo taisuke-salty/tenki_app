@@ -1,16 +1,15 @@
 <div>
   <h2>カード</h2>
   <%= form_tag("/cards/create") do %>
-    <p>日付：
-    <input type="datetime-local" name="feel_on" value="<%=@card_time%>">
+    <p>日付：</p>
+    <%= datetime_select(:card, :feel_on, use_month_numbers: true) %>
+
+    <!-- <input type="datetime-local" name="feel_on" value="<%=@card_time%>"> -->
 
     <p>感情：
-    <select name="feeling">
-      <option value="1">楽しい</option>
-      <option value="2">嬉しい</option>
-      <option value="3">悲しい</option>
-      <option value="4">怒り</option>
-    </select></p>
+    <%= select(:card, :feeling,
+    {'楽しい' => 1, '嬉しい' => 2, '悲しい' => 3, '怒り' => 4}) %></p>
+
     <p>詳細：
     <textarea name="detail"></textarea></p>
     <input type="submit" value="投稿">
