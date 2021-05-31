@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-before_action :set_card, only: [:show, :edit, :destroy]
+before_action :set_card, only: [:show, :edit, :destroy, :update]
 
   def index
     @cards = Card.all.order(feel_on: :desc)
@@ -16,16 +16,14 @@ before_action :set_card, only: [:show, :edit, :destroy]
 
   def new
 
-    @card_time = Time.current.strftime("%Y-%m-%dT%H:%M")
+    # @card_time = Time.current.strftime("%Y-%m-%dT%H:%M")
     # binding.pry
   end
 
   def create
-    @card = Card.new(feel_on: Time.parse(card_params[:feel_on]),
-                    feeling: card_params[:feeling],
-                    detail: card_params[:detail],
-                    user_id: current_user.id)
-
+    @card = Card.new(card_params)
+    # , user_id: current_user.id)
+    @card.user_id = current_user.id
     if @card.save
       # binding.pry
       flash[:notice] = "感情カードが投稿されました"
@@ -33,6 +31,18 @@ before_action :set_card, only: [:show, :edit, :destroy]
     else
       # binding.pry
       render("cards/new")
+    end
+  end
+
+  def update
+    if @card.update(card_params)
+      # binding.pry
+
+      flash[:notice] = "感情カードが編集されました"
+      redirect_to("/cards/index")
+    else
+      # binding.pry
+      render("cards/edit")
     end
   end
 
