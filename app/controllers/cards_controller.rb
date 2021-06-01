@@ -48,7 +48,11 @@ before_action :set_card, only: [:show, :edit, :destroy, :update]
 
   def destroy
     @card.destroy
+    flash[:notice] = "感情カードが削除されました"
+    # binding.pry
     redirect_to("/cards/index")
+    # binding.pry
+
   end
 
   private

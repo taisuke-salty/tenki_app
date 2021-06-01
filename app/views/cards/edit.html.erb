@@ -3,7 +3,7 @@
   <%= form_tag("/cards/#{@card.id}/update") do %>
     <p>日付：</p>
     <%= datetime_select(:card, :feel_on, use_month_numbers: true) %>
-    <!-- TODO カレンダー形式に変えたい。-->
+    <!-- TODO: カレンダー形式に変えたい。-->
     <!-- <input type="datetime-local" name="feel_on" value="<%=@card_time%>"> -->
 
     <p>感情：
