@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "conditions/create" => "conditions#create"
   get "conditions/:id/edit" => "conditions#edit"
   post "conditions/:id/update" => "conditions#update"
-  post "conditions/:id/destroy" => "conditions#destroy"
+  delete "conditions/:id/destroy" => "conditions#destroy"
   get "conditions/:id" => "conditions#show"
 
   get "cards/index" => "cards#index"    #使用しない→後ほど削除
