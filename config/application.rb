@@ -18,7 +18,6 @@ module TenkiApp
     config.time_zone = 'Tokyo'
 
     # deviseの日本語化https://pikawaka.com/rails/devise
-    config.i18n.default_locale = :ja
   end
 end
 

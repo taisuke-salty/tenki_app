@@ -1,5 +1,6 @@
 class ConditionsController < ApplicationController
-  before_action :sign_in_required
+  # before_action :sign_in_required
+  before_action :authenticate_user!
   before_action :set_condition, only: [:show, :destroy, :edit]
 
   def index

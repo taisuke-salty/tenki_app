@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
-before_action :set_card, only: [:show, :edit, :destroy, :update]
-
+  before_action :authenticate_user!
+  before_action :set_card, only: [:show, :edit, :destroy, :update]
+a
   def index
     @cards = Card.all.order(feel_on: :desc)
   end
