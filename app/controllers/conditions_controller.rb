@@ -4,7 +4,8 @@ class ConditionsController < ApplicationController
   before_action :set_condition, only: [:show, :destroy, :edit]
 
   def index
-    @conditions = Condition.all.order(evaluate_on: :desc)
+    # @conditions = Condition.all.order(evaluate_on: :desc)
+    @conditions = current_user.conditions.order(evaluate_on: :desc)
   end
 
   def new
