@@ -1,6 +1,7 @@
 class ConditionsController < ApplicationController
   # before_action :sign_in_required
   before_action :authenticate_user!
+  before_action :ensure_correct_user,  only: [:show, :edit, :destroy, :update]
   before_action :set_condition, only: [:show, :destroy, :edit]
 
   def index
@@ -66,6 +67,13 @@ class ConditionsController < ApplicationController
   private
     def set_condition
       @condition = Condition.find(params[:id])
+    end
+
+    def ensure_correct_user
+      if Condition.find(params[:id]).user_id != current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to("/conditions/index")
+      end
     end
 
 end
