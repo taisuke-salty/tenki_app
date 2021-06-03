@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user,  only: [:show, :edit, :destroy, :update]
   before_action :set_card, only: [:show, :edit, :destroy, :update]
 
   def index
@@ -64,6 +65,13 @@ class CardsController < ApplicationController
 
     def card_params
       params.require(:card).permit(:feeling, :feel_on, :detail)
+    end
+
+    def ensure_correct_user
+      if Card.find(params[:id]).user_id != current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to("/cards/index")
+      end
     end
 
 end
