@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'analyze/:a_day/a_day' => "analyze#a_day"
+
   get "conditions/index" => "conditions#index"    #使用しない→後ほど削除
   get "conditions/new" => "conditions#new"
   post "conditions/create" => "conditions#create"
