@@ -1,5 +1,21 @@
-<h1>Analyze#a_day</h1>
-<p>Find me in app/views/analyze/a_day.html.erb</p>
 
+<div>
+  <% @conditions.each do |condition| %>
+    <p>condition</p>
+    <p>id: <%= condition.id %></p>
+    <p>user_id: <%= condition.user_id %></p>
+    <p>evaluation: <%= condition.evaluation %></p>
+    <p>motivation: <%= condition.motivation %></p>
 
-@d
+  <% end %>
+
+  <% @cards.each do |card| %>
+    <p>card</p>
+    <p>id: <%= card.id %></p>
+    <p>user_id: <%= card.user_id %></p>
+    <p>feel_on: <%= card.feel_on %></p>
+    <p>feeling: <%= card.feeling %></p>
+    <p>detail: <%= card.detail %></p>
+
+  <% end %>
+</div>
