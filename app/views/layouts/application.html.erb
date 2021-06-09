@@ -24,8 +24,9 @@
     </div>
     <div class="navbar-nav">
       <ul class="navbar-nav-ul">
-      <%= user_signed_in? %>
+
         <% if user_signed_in? %>
+        <p>user_id: <%= current_user.id %></p>
         <strong><%# link_to current_user.username, pages_show_path %></strong>
         <li class="nav-item">
           <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
