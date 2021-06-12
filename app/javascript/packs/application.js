@@ -14,7 +14,7 @@ require("channels")
 
 require('jquery')
 
-require('./practice.js')
+
 
 console.log('Hello World from Webpacker')
 // require('./hello_react.jsx')    // この行を追加
@@ -37,3 +37,5 @@ import Name from '../reduxPractice/name'
 window.Name = Name
 
 console.log('hoge');
+
+require('./practice.js')
