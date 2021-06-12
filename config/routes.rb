@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   root to: 'conditions#index'
   # root to: 'hello#index'
 
+  get "hello/index"
+
   resources :nikki do                     #tweets_controllerに対してのresourcesメソッド
   end
 

@@ -5,6 +5,8 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
+
 
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
@@ -12,6 +14,7 @@ require("channels")
 
 require('jquery')
 
+require('./practice.js')
 
 console.log('Hello World from Webpacker')
 // require('./hello_react.jsx')    // この行を追加
