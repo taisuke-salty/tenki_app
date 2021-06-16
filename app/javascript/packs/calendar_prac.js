@@ -10,11 +10,13 @@ const startDate = new Date(year, month -1 , 1);
 const endDate = new Date(year, month, 0);
 const startDay = startDate.getDay();
 const endDateCount = endDate.getDate();
+const lastMonthEndDate = new Date(year, month - 1, 0);
+const lastMonthEndDay = lastMonthEndDate.getDate();
+
 let dateCount = 1
-
 let calendarHtml = "";
-calendarHtml += "<h1>" + year + "/" + month + "</h1>";
 
+calendarHtml += "<h1>" + year + "/" + month + "</h1>";
 calendarHtml += "<table>";
 
 // 曜日行
@@ -27,13 +29,17 @@ calendarHtml += "<table>";
 // 日にち行
   for(let w = 0; w < 6; w++) {
     calendarHtml += "<tr>" ;
+
     for(let d = 0; d < 7; d++){
       if(w == 0 && d < startDay){
-        calendarHtml += "<td></td>";
+        let num = lastMonthEndDay - startDay + 1 + d;
+        calendarHtml += '<td class="is-disabled">' + num + "</td>";
       } else if(dateCount > endDateCount){
-        calendarHtml += "<td></td>";
+        let num = dateCount - endDateCount
+        calendarHtml += '<td class="is-disabled">' + num + "</td>";
+        dateCount ++ ;
       } else {
-        calendarHtml += "<td>" + dateCount +  "</td>";
+        calendarHtml += '<td>' + dateCount +  "</td>";
         dateCount ++ ;
       }
     }

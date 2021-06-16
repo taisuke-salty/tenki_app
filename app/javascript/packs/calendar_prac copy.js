@@ -5,6 +5,8 @@ const month = date.getMonth() + 1
 const startDate = new Date(year, month - 1, 1) // 月の最初の日を取得
 const endDate = new Date(year, month,  0) // 月の最後の日を取得
 const endDayCount = endDate.getDate() // 月の末日
+const lastMonthEndDate = new Date(year, month - 1, 0) // 前月の最後の日の情報
+const lastMonthendDayCount = lastMonthEndDate.getDate() // 前月の末日
 const startDay = startDate.getDay() // 月の最初の日の曜日を取得
 let dayCount = 1 // 日にちのカウント
 let calendarHtml = '' // HTMLを組み立てる変数
@@ -23,10 +25,13 @@ for (let w = 0; w < 6; w++) {
     for (let d = 0; d < 7; d++) {
         if (w == 0 && d < startDay) {
             // 1行目で1日の曜日の前
-            calendarHtml += '<td></td>'
+            let num = lastMonthendDayCount - startDay + d + 1
+            calendarHtml += '<td class="is-disabled">' + num + '</td>'
         } else if (dayCount > endDayCount) {
             // 末尾の日数を超えた
-            calendarHtml += '<td></td>'
+            let num = dayCount - endDayCount
+            calendarHtml += '<td class="is-disabled">' + num + '</td>'
+            dayCount++
         } else {
             calendarHtml += '<td>' + dayCount + '</td>'
             dayCount++
@@ -35,6 +40,7 @@ for (let w = 0; w < 6; w++) {
     calendarHtml += '</tr>'
 }
 calendarHtml += '</table>'
+
 
 var renderCalender = () => {document.querySelector('#calendar-prac').innerHTML = calendarHtml}
 
