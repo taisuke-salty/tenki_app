@@ -82,8 +82,11 @@
   </div>
   <div class="main-frame">
     <%= yield %>
-
-    <div id="calendar-prac">a</div>
+    <section>
+      <button id="prev" type="button">前の月</button>
+      <button id="next" type="button">次の月</button>
+      <div id="calendar-prac"></div>
+    </section>
   </div>
 
   <footer>

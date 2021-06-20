@@ -1,21 +1,17 @@
 const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date()
-const year = date.getFullYear()
-const month = date.getMonth() + 1
+let year = date.getFullYear()
+let month = date.getMonth() + 1
 const config = {
     show: 3,
 }
 
-var showCalendar = (year, month) => {
-    // console.log("hoge")
-    // document.querySelector('#calendar-prac').innerHTML = "test"
-
+function showCalendar(year, month) {
     for ( i = 0; i < config.show; i++) {
         const calendarHtml = createCalendar(year, month)
         const sec = document.createElement('section')
         sec.innerHTML = calendarHtml
-        console.log(sec)
-        document.querySelector('#calendar-prac').appendChild(sec)
+        document.querySelector('#calendar').appendChild(sec)
 
         month++
         if (month > 12) {
@@ -68,4 +64,31 @@ function createCalendar(year, month) {
     return calendarHtml
 }
 
-window.addEventListener("load", () => {showCalendar(year, month)});
+function moveCalendar(e) {
+    document.querySelector('#calendar').innerHTML = ''
+
+    if (e.target.id === 'prev') {
+        month--
+
+        if (month < 1) {
+            year--
+            month = 12
+        }
+    }
+
+    if (e.target.id === 'next') {
+        month++
+
+        if (month > 12) {
+            year++
+            month = 1
+        }
+    }
+
+    showCalendar(year, month)
+}
+
+document.querySelector('#prev').addEventListener('click', moveCalendar)
+document.querySelector('#next').addEventListener('click', moveCalendar)
+
+showCalendar(year, month)

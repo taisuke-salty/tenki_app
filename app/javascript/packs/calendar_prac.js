@@ -6,8 +6,8 @@
 
 const weeks = ['日', '月', '火', '水', '木', '金', '土']
 const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth() + 1;
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
 const config = {
   show: 3,
 };
@@ -86,6 +86,38 @@ function createCalendar(year, month) {
   return calendarHtml;
 }
 
+var moveCalendar =  (e) => {
+  document.querySelector('#calendar-prac').innerHTML = "";
+
+  if (e.target.id === "prev" ) {
+    month--;
+      if(month < 1) {
+        year--;
+        month = 12;
+      }
+  }
+
+  if (e.target.id === "next") {
+    month++;
+      if (month > 12){
+        year++;
+        month = 1;
+      }
+  }
+
+  showCalendar(year, month);
+}
+
+var onClickFunc = () => {
+  document.querySelector('#prev').addEventListener('click', moveCalendar);
+  document.querySelector('#next').addEventListener('click', moveCalendar);
+}
+
+
 // var renderCalender = () => {document.querySelector('#calendar-prac').innerHTML = showCalendar(year, month) }
 
+// addEventListenerは、Lister（ = 渡す関数）に引数を直接渡す事ができない。関数そのものだけしか渡せない。
+// 渡す場合はhandleEventとか言うのが必要らしい。
+// そのため、今回は無名関数にshowCalendar(引数)を渡すことで対応したが、イベントの解除等が必要な場合はこの方法は使えないらしい。
 window.addEventListener("load", function(){showCalendar(year, month)});
+window.addEventListener("load", onClickFunc);
