@@ -73,7 +73,7 @@ function createCalendar(year, month) {
           calendarHtml += '<td class="is-disabled">' + num + "</td>";
           dateCount ++ ;
         } else {
-          calendarHtml += '<td>' + dateCount +  "</td>";
+          calendarHtml += `<td class="calendar-td" data-year="${year}" data-month="${month}" data-date="${dateCount}">${dateCount}</td>`;
           dateCount ++ ;
         }
       }
@@ -86,6 +86,11 @@ function createCalendar(year, month) {
   return calendarHtml;
 }
 
+// 関数にeなどを引数にして、その関数をaddEventListenerなどの関数にコールバック関数として渡す（このようにイベントが起きたときに渡されるコールバック関数をイベントハンドラーやイベントリスナーという）と、
+// eに「イベントオブジェクト」というオブジェクトを渡すことができる。
+// イベントオブジェクトとは、イベント発生時の情報を持つオブジェクト。
+// 例えば、イベントハンドラーの中で「e.target.id」とすると、クリックされたHTML要素のidを取ることができる。
+// http://brush-clover.com/program/js-study6/
 var moveCalendar =  (e) => {
   document.querySelector('#calendar-prac').innerHTML = "";
 
@@ -113,6 +118,33 @@ var onClickFunc = () => {
   document.querySelector('#next').addEventListener('click', moveCalendar);
 }
 
+document.addEventListener("click", function(e){
+  console.log(e)
+  if(e.target.classList.contains("calendar-td")) {
+    let el = e.target.dataset
+    $.ajax({
+      // 実行したいactionへのpathに置き換えてください。
+      // 例えば users_controller の create アクションなどの場合は
+      // /users/create などとなると思います。
+      url: '/path/to/action',
+      // GET, POST, PUT, DELETEなどを設定します。
+      type: 'GET',
+      // urlにつけるパラメータを指定します。
+      data: {
+        // JSの変数の中のデータをRailsに渡します。
+        // Rails からは parmas[:hoge] で受け取れます。
+        hoge: 'fuga'
+      },
+    })
+    .done(function(response){
+      // Railsのアクションが正しく実行された時の処理
+    })
+    .fail(function(xhr){
+      // Railsのアクションなどでエラーが発生した時の処理
+    });
+
+  }
+});
 
 // var renderCalender = () => {document.querySelector('#calendar-prac').innerHTML = showCalendar(year, month) }
 

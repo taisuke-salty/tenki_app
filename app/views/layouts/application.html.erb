@@ -83,9 +83,15 @@
   <div class="main-frame">
     <%= yield %>
     <section>
+      <h1>指定した日付の評価を見る</h1>
       <button id="prev" type="button">前の月</button>
       <button id="next" type="button">次の月</button>
       <div id="calendar-prac"></div>
+      <%= form_tag("/analyze/a_day", method: "get") do %>
+        <!-- TODO: ヘルパーメソッド使う -->
+        <input type="date" name="a_day" value="<%=Date.today%>">
+        <input type="submit" value="表示">
+      <% end %>
     </section>
   </div>
 

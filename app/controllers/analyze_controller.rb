@@ -2,7 +2,7 @@ class AnalyzeController < ApplicationController
   def a_day
     p params
 
-    @a_day = params[:x]
+    @a_day = params[:a_day]
     set_cards
 
   end
