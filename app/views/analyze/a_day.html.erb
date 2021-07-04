@@ -7,6 +7,9 @@
     <p>evaluation: <%= condition.evaluation %></p>
     <p>motivation: <%= condition.motivation %></p>
   <% end %>
+
+  <%= @a_day %>
+  <div id="condition_result">condition_ajax</div>
   <p>================</p>
 
   <% @cards.each do |card| %>
@@ -19,4 +22,6 @@
     <p>---------------</p>
 
   <% end %>
+
+  <div id="caer_result">card_ajax</div>
 </div>

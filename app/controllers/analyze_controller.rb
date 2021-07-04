@@ -3,8 +3,15 @@ class AnalyzeController < ApplicationController
     p params
 
     @a_day = params[:a_day]
+    # binding.pry
     set_cards
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    # render "analyze/a_day"
   end
 
   def today_day

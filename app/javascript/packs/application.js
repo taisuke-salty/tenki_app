@@ -39,4 +39,4 @@ window.Name = Name
 console.log('hoge');
 
 require('./practice.js')
-// require('./calendar_prac.js')
+require('./calendar_prac.js')
