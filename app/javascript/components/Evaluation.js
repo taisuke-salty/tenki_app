@@ -42,8 +42,8 @@ class Evaluation extends React.Component {
   }
 }
 
-Evaluation.PropTypes ={
-  evaluation: PropTypes.string
-}
+// Evaluation.PropTypes ={
+//   evaluation: PropTypes.string
+// }
 
 export default Evaluation
