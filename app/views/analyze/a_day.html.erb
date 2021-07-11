@@ -1,4 +1,82 @@
 
+
+
+
+<main>
+
+
+<div class="main-left">
+  <h2 class="index-title"><%= @a_day.strftime("%Y/%m/%d") %>のあなた</h2>
+  <div class="condition">
+    <div class="evaluation-area">
+      <p class="index-title">評価</p>
+      <%= react_component("Evaluation", num: @evaluation) %>
+    </div>
+    <%= react_component("Motivation", num: @motivation) %>
+  </div>
+  <div class="emotion-aggregate">
+    <div class="index-title">感情カードの割合</div>
+
+
+    <div class="emotion-graph">
+      <%= react_component("PieChart", cardsHappy: @cardsHappy, cardsGrad: @cardsGrad, cardsSad: @cardsSad, cardsAngry: @cardsAngry) %>
+    </div>
+  </div>
+  <div class="emotion-card-section">
+    <p class="index-title">感情カード一覧</p>
+    <div class="cards-frame" >
+      <p class="index-title">楽しい</p>
+      <div class="cards-area">
+        <% @cardsHappy.each do |card| %>
+          <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="cards-frame" >
+      <p class="index-title">嬉しい</p>
+      <div class="cards-area">
+        <% @cardsGrad.each do |card| %>
+          <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="cards-frame" >
+      <p class="index-title">悲しい</p>
+      <div class="cards-area">
+        <% @cardsSad.each do |card| %>
+          <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="cards-frame" >
+    <p class="index-title">怒り</p>
+    <div class="cards-area">
+      <% @cardsAngry.each do |card| %>
+        <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="main-right">
+  <div class="calender-area">
+    <%= react_component("indexCalendar") %>
+  </div>
+  <div class="whether-frame">
+    <p class="index-title"><%= @date1 %>の天気</p>
+    <div class="whether-img-area">
+      <%= image_tag  "sun.svg", class:"sunny"  %>
+
+    </div>
+  </div>
+
+</div>
+
+
+</main>
+
+
+
 <div>
   <% @conditions.each do |condition| %>
     <p>condition</p>
