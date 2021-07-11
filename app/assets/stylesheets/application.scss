@@ -1,0 +1,715 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// calendar-prac用
+.is-disabled {
+  color: gray;
+}
+
+
+.upper-body{
+  padding-top: 56px;
+}
+
+
+.user-title{
+  padding-top: 56px;
+}
+
+/*  ####header##############################*/
+
+.navbar{
+  max-width: 1440px;
+  width: 100%;
+  height: 56px;
+  background-color: #c96191;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  position: fixed;
+  z-index: 9999;
+  box-shadow: 0px 3px 6px Rgb(0,0,0,0.1);
+  /* box-shadow:水平方向の距離　垂直方向の距離　ぼかし具合 広がり具合（距離）　色指定（任意）; */
+  font-size: 22px;
+  color: white;
+}
+
+.logo{
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img img{
+  height: 26px;
+  width: auto;
+  display: block;
+  margin: auto 8px auto 0;
+
+}
+
+.logo-letter {
+  font-size: 22px;
+  color: white;
+}
+
+.navbar-nav-ul{
+  display: flex;
+
+}
+.nav-item{
+  margin-left: 40px;
+}
+.nav-link{
+  font-size: 22px;
+  color: white;
+
+}
+
+/* ######footer############################### */
+
+.footer-top{
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  vertical-align: bottom;
+
+}
+.footer-main{
+  width: 100%;
+  max-width: 1440px;
+  height: 160px;
+  background-color: #c96191;
+  box-sizing: border-box;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cp{
+font-size:  14px;
+font-weight: bold;
+}
+
+
+/* ####LP################################ */
+
+.consept-section{
+}
+.concept-frame{
+  /* position: relative; */
+  background-color: #c96191;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+  height: 754px;
+  box-sizing: border-box;
+  padding: 142px 160px 0;
+}
+.concept-main{
+  flex: 0 1 640px;
+  color: white;
+}
+.concept-title{
+  font-size: 56px;
+  font-weight: bold;
+  padding-bottom: 16px;
+}
+.concept-desc{
+  max-width: 440px;
+  width: auto;
+  height: 168px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.concept-button-area{
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.primary-button{
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-sizing: border-box;
+  color: #c96191;
+  background-color: white;
+  border-radius: 64px;
+  width: 276px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  box-shadow: 0 12px 11px Rgb(7,6,6,44%);
+  margin-bottom: 18px;
+}
+
+.login-link{
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+.concept-img-area{
+  box-sizing: border-box;
+  /* height: auto; */
+  flex: 0 1 481px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.concept-img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.section1-end-img{
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+
+}
+
+.section2{
+}
+.features-frame{
+  max-width: 1440px;
+  width: 100%;
+  height: 640px;
+  box-sizing: border-box;
+  padding: 16px 160px 0;
+}
+
+.section-title{
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.features-area{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 54px;
+
+}
+
+.feature-main{
+  max-width: 302px;
+  width: 100%;
+  text-align: center;
+
+}
+.feature-img{
+  display: block;
+  margin: 0 auto 32px;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.feature-title{
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.feature-desc{
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.feature-button-area{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.how_to-frame{
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.how_to-header{
+  background-color: #FFF5F9;
+  padding: 48px 160px 36px;
+
+}
+
+.how_to-head-desc{
+  margin: 32px auto 0;
+  max-width: 640px;
+  font-size: 16px;
+  line-height: 1.6;
+  /* font-weight: bold; */
+}
+
+.how_to-block{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  height: 338px;
+  background: linear-gradient(to bottom, #FFF5F9, #F4DBE6);
+  padding: 0 160px 0;
+
+}
+
+.how_to-main{
+  max-width: 569px;
+  width: 100%;
+  /* margin: auto 0; */
+}
+
+.how_to-main-title{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.how_to-main-desc{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #707070;
+}
+
+
+.how_to-img-area {
+  width: 527px;
+  height: 304px;
+
+}
+
+.img-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* cardsの詳細は最下部 */
+
+.img-2 {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.good {
+  display: block;
+  max-width: 120px;
+  width: 120px;
+  max-height: 120px;
+  height: auto;
+  flex-shrink: 1;
+
+}
+.motivate{
+  display: block;
+  flex-shrink: 1;
+
+}
+
+.img-3{
+  background-color: white;
+
+}
+
+.how_to-footer{
+  height: 104px;
+  background-color: #F4DBE6;
+
+}
+
+.regist-section{
+  /* height: 800px; */
+
+}
+
+.regist-frame{
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+.regist-area{
+  max-width: 1120px;
+  width: 100%;
+  /* height: 640px; */
+  box-sizing: border-box;
+  background-color: #FFF5F9;
+  padding-top: 97px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.regist-main{
+  /* display: flex;
+  justify-content: center; */
+  max-width: 720px;
+  margin: 72px 18% 104px;
+  width: auto;
+}
+.regist-label{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.regist-form{
+  max-width: 720px;
+  height: 48px;
+  border: 1px solid #AAAAAA ;
+  border-radius: 7px;
+  background-color: white;
+  margin-bottom: 20px;
+
+}
+.regist-button{
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  box-sizing: border-box;
+  color: white;
+  background-color: #c96191;
+  border-radius: 64px;
+  max-width: 720px;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 104px;
+}
+
+
+
+/* #####loginページ############################################# */
+
+.login-section{
+  /* height: 800px; */
+
+}
+
+.login-frame{
+  /* position: relative; */
+  /* top: 120px; */
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 120px; */
+  margin-bottom: 170px;
+  box-sizing: border-box;
+}
+.login-area{
+  max-width: 1120px;
+  width: 100%;
+  /* height: 640px; */
+  box-sizing: border-box;
+  background-color: #FFF5F9;
+  padding-top: 97px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.login-main{
+  /* display: flex;
+  justify-content: center; */
+  max-width: 720px;
+  margin: 72px 18% 104px;
+  width: auto;
+}
+.login-label{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.login-form{
+  max-width: 720px;
+  height: 48px;
+  border: 1px solid #AAAAAA ;
+  border-radius: 7px;
+  background-color: white;
+  margin-bottom: 20px;
+
+}
+.login-button{
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  box-sizing: border-box;
+  color: white;
+  background-color: #c96191;
+  border-radius: 64px;
+  max-width: 720px;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 104px;
+}
+
+/* #######index######################################################## */
+#index-back{
+  background-color: #EAA3C4;
+}
+.main-frame{
+  margin: 0 140px;
+  padding: 56px 16px 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.main-left{
+  margin-top: 16px;
+  max-width: 736px;
+  flex: 1 1 736px;
+}
+.index-title{
+  font-size: 22px;
+  /* margin-bottom: 48px; */
+}
+
+
+.condition{
+  display: flex;
+  width: 100%;
+  margin-top: 48px;
+  margin-bottom: 96px;
+}
+
+.evaluation-area{
+  max-width: 216px;
+  flex: 1 1 216px;
+}
+
+.condition-title{
+  font-size: 22px;
+
+}
+
+.evaluation-img-area{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 謎の現象　①align-items を外すと画像が縦に伸びる。
+  ②evaluatuin-img-areaの高さがconditionと同じ高さであるが、condition-titleがあることによるズレが無視される。 */
+}
+
+.evaluation-img{
+  display: block;
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+
+}
+
+.motivation-area{
+  max-width: 512px;
+  flex: 1 1 512px;
+}
+
+.motivation-img-area{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.motivation-img{
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+
+.emotion-aggregate{
+  width: 100%;
+  margin-bottom: 96px;
+
+}
+
+.emotion-graph{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.emotion-graph-img{
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.cards-frame{
+  margin-top: 32px;
+  /* height: 456px; */
+  box-sizing: border-box;
+  /* padding-bottom: 1px; */
+}
+
+/* LPのcardには下余白は不要。カードを並べるときはcards-areaにカードを収め、その親要素がある場合にcardクラスにマージンボトムを当てる */
+.cards-frame .card{
+  margin-bottom: 32px;
+}
+
+.cards-area{
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.main-right{
+  max-width: 360px;
+  flex: 1 1 360px;
+}
+
+.calender-area{
+  width: 100%;
+  margin-bottom: 48px;
+}
+.calender-area img{
+  width: 100%;
+  max-width: 360px;
+}
+
+.whether-img-area{
+  margin-top: 32px;
+  width: 100%;
+  max-width: 160px;
+  display: flex;
+  justify-content: center;
+}
+
+.whether-img-area .sunny{
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+}
+
+/* ＃＃＃＃＃＃＃＃＃Cards####################################### */
+.card{
+  box-sizing: border-box;
+  max-width: 230px;
+  max-height: 210px;
+  width: 230px;
+  height: 210px;
+  box-shadow: 0px 3px 6px Rgb(0,0,0,34%);
+  /* box-shadow:水平方向の距離　垂直方向の距離　ぼかし具合 広がり具合（距離）　色指定（任意）; */
+  font-size: 16px;
+  padding: 10px;
+
+}
+
+.card-emotion{
+  width: 78px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  /* margin-top: 8px;
+  margin-left: 8px; */
+  margin-bottom: 8px;
+  font-weight: bold;
+
+}
+
+.card-day{
+  margin-bottom: 8px;
+
+}
+
+.card-detail-title{
+  margin-bottom: 4px;
+}
+
+.card-detail-text{
+  line-height: 1.6;
+}
+
+.card-happy{
+  background-color: #FFF59D;
+}
+.card-grad{
+  background-color: #C4E1A4;
+}
+.card-sad{
+  background-color: #BBDEFB;
+}
+.card-angry{
+  background-color: #FFCDD2;
+
+}
+
+.emotion-happy{
+  background-color: #FADE03;
+}
+.emotion-grad{
+  background-color: #33691E;
+  color: white;
+}
+.emotion-sad{
+  background-color: #0D47A0;
+  color: white;
+
+}
+.emotion-angry{
+  background-color: #B71C1C;
+  color: white;
+}
+
+
+/* 佐野さんに聞くことまとめ
+・how_toのimgについて、flex-shrinkが効かない */
+
+
+
+
+// .btn{
+//   height: 40px;
+//   width: 160px;
+//   justify-content: center;
+//   font-size: large;
+
+//   &.btn-danger{
+//     background-color: red;
+//     color: white;
+//   }
+
+//   &.btn-primary {
+//     background-color: green;
+//     color: skyblue;
+//   }
+// }
+
+

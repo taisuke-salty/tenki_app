@@ -1,0 +1,70 @@
+renderの上で定義した関数は宣言不要→使うときに（）が不要
+renderの中で定義下関数が宣言が必要。→使うときは（）が必要
+→回答：
+ https://qiita.com/mejileben/items/69e5facdb60781927929
+
+
+    const srcImgs = ['/assets/motivated@2x.png','/assets/not_motivated@2x.png']
+    const imgArea = () =>{
+      console.log(this.props.num)
+      var num = this.props.num
+
+      // コンポーねんとをそれぞれつくって
+      // モチベーションコンポーネント、not/モチベーションImgコンポーネント（２種類）
+
+      switch(num){
+        case 0:
+          return  (
+          <div className="motivation-img-area">
+            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+            < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+          </div>);
+          break;
+
+          case 1:
+            //赤が１つ、白が３つ
+            // ４−１→白の下図
+            // 赤：num, 白：4-num
+            // loopで
+            return  (
+            <div className="motivation-img-area">
+              < img src='/assets/motivated@2x.png' className='motivation-img'  />
+              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+              < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+            </div>);
+            break;
+
+            case 2:
+              return  (
+              <div className="motivation-img-area">
+                < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+                < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+              </div>);
+              break;
+
+              case 3:
+                return  (
+                <div className="motivation-img-area">
+                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                  < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                  < img src='/assets/not_motivated@2x.png' className='motivation-img'  />
+                </div>);
+                break;
+
+                case 4:
+                  return  (
+                  <div className="motivation-img-area">
+                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                    < img src='/assets/motivated@2x.png' className='motivation-img'  />
+                  </div>);
+                  break;
+      }
+    }

@@ -1,0 +1,10 @@
+<div>
+<div>id: <%= @card.id %></div>
+<div>user_id: <%= @card.user.id %></div>
+<div>日付: <%= @card.feel_on %></div>
+<div>詳細: <%= @card.detail %></div>
+
+<%= link_to("編集", "/cards/#{@card.id}/edit") %>
+<%= link_to("削除", "/cards/#{@card.id}/destroy", {method: "delete"}) %>
+<%= link_to("一覧に戻る", "/cards/index") %>
+</div>

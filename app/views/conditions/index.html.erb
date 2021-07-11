@@ -1,0 +1,10 @@
+<div>
+<% @conditions.each do |condition| %>
+  <div>-------------------------------</div>
+  <div><%=link_to(condition.evaluate_on.strftime("%Y/%m/%d"), "/conditions/#{condition.id}") %></div>
+  <div>評価：<%= condition.evaluation %></>
+  <div>モチベーション：<%= condition.motivation %></div>
+<% end %>
+</div>
+
+<%= link_to("今日", "analyze/#{Time.new}/a_day") %>

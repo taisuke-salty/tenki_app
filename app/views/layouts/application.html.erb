@@ -7,11 +7,100 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
-    # <%= javascript_pack_tag 'hello_react' %>
+
+
 
   </head>
 
-  <body>
+  <header>
+  <div class="navbar">
+    <div class="logo">
+      <div class="logo-img">
+        <%= image_tag "app-logo.png", alt:"あなたと天気" %>
+      </div>
+      <div class="logo-letter">
+        <p>あなたと天気</p>
+      </div>
+    </div>
+    <div class="navbar-nav">
+      <ul class="navbar-nav-ul">
+
+        <% if user_signed_in? %>
+        <p>user_id: <%= current_user.id %></p>
+        <strong><%# link_to current_user.username, pages_show_path %></strong>
+        <li class="nav-item">
+          <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <% d = Time.new %>
+        <%= link_to '今日の気分', "/analyze/today_day", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '評価投稿', "/conditions/new", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '評価一覧', "/conditions/index", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'カード投稿', "/cards/new", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'カード一覧', "/cards/index", class: "nav-link" %>
+        </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', new_user_session_path %>
+          </li>
+        <% end %>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">ログイン</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#regist-section">新規登録</a>
+        </li>
+        -->
+      </ul>
+    </div>
+
+  </div>
+  </header>
+
+  <body id="index-back">
+
+
+
+  <div class="upper-body">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <p> dzfa </p>
+  </div>
+  <div class="main-frame">
     <%= yield %>
+    <section>
+      <h1>指定した日付の評価を見る</h1>
+      <button id="prev" type="button">前の月</button>
+      <button id="next" type="button">次の月</button>
+      <div id="calendar-prac"></div>
+      <%= form_tag("/analyze/a_day", method: "get") do %>
+        <!-- TODO: ヘルパーメソッド使う -->
+        <input type="date" name="a_day" value="<%=Date.today%>">
+        <input type="submit" value="表示">
+      <% end %>
+    </section>
+  </div>
+
+  <footer>
+  <div class="footer-main">
+    <div class="cp">
+      Copyright © Taisuke Sato
+    </div>
+  </div>
+</footer>
   </body>
 </html>

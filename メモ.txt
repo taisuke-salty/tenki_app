@@ -1,0 +1,79 @@
+●JSのパッケージ管理について
+→railsはyarnで管理しているようなので、今後JSのライブラリを入れたりするときはyarnでする。
+（調べてnpmが出てきたときは、npmとyarnの対応表をネットで調べて対応可能。）
+
+
+scr
+ View
+  container
+  components
+ state
+  store
+  counter
+    action
+    reducer
+  name
+
+＜DB設計＞
+ユーザー
+(→devise）
+　地域
+　　 (zip-code
+    started at
+    ended at)→引っ越し等で移動すること（ユーザーが地域を複数持つことは後で考える）
+　ID
+　名前
+
+condition
+　evaluation（型：integer)→その日が良かったか悪かったか
+　motivation　（型：integer)
+　evaluate_on(型：Date)→評価日
+
+card
+　feeling(型：integer)→喜怒哀楽
+　feel_on（型：time)→感情発生日時
+　detail（型：text）
+
+天気（API）
+
+＜コントローラー＞
+○conditionコントローラー
+action
+　・Post
+　・edit
+　・destroy
+
+○cardコントローラー
+action
+　・Post
+　・edit
+　・destroy
+
+○analysisコントローラ
+action
+　・show?(カレンダーで選択された日の評価やカードを一覧にするページの表示)
+　・show?(指定された期間のデータをグラフにする)
+
+
+  <div>user_id: <%= card.user.id %></div>
+
+＜日時の扱いでの注意点＞
+①Ruby、Railsでの日時の扱い
+Ruby での
+Time.new(YYYY, MM, DD HH, MM, SS)
+Time.parse("YYYY-MM-DDThh:mm:ss")
+
+cf) TimeWithZone()
+
+②RailsとDBでのTime型、DATETIME型の定義の違い
+→Rails。。。。では
+
+https://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c https://docs.ruby-lang.org/ja/latest/method/Time/s/new.html 
+Ippei Shoji から 皆様 : (8:33 午後)
+ https://docs.ruby-lang.org/ja/latest/class/DateTime.html https://docs.ruby-lang.org/ja/latest/method/Time/s/parse.html
+
+DBのマイグレーション
+
+2021/5/25 進捗
+・Progate全部終えて白本
+・

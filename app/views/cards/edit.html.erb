@@ -1,0 +1,17 @@
+<div>
+  <h2>カード</h2>
+  <%= form_tag("/cards/#{@card.id}/update") do %>
+    <p>日付：</p>
+    <%= datetime_select(:card, :feel_on, use_month_numbers: true) %>
+    <!-- TODO: カレンダー形式に変えたい。-->
+    <!-- <input type="datetime-local" name="feel_on" value="<%=@card_time%>"> -->
+
+    <p>感情：
+    <%= select(:card, :feeling,
+    {'楽しい' => 1, '嬉しい' => 2, '悲しい' => 3, '怒り' => 4}) %></p>
+
+    <p>詳細：
+    <textarea name="card[detail]"><%= @card.detail %></textarea></p>
+    <input type="submit" value="投稿">
+  <% end %>
+</div>

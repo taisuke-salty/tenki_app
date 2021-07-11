@@ -6,23 +6,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
-// →省略せずに書くと以下（reactモジュールを継承したコンポーネントを作る）
-// class Hello extends React.Component {
-//   render() {
-//     return <div>Hello {props.name}!</div>
-//   }
+// const Hello = props => (
+//   <div>Hello {props.name}!</div>
+// )
+// // →省略せずに書くと以下（reactモジュールを継承したコンポーネントを作る）
+// // class Hello extends React.Component {
+// //   render() {
+// //     return <div>Hello {props.name}!</div>
+// //   }
+// // }
+
+// Hello.defaultProps = {
+//   name: 'David'
 // }
 
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
+// Hello.propTypes = {
+//   name: PropTypes.string
+// }
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   ReactDOM.render(
@@ -31,4 +31,4 @@ Hello.propTypes = {
 //   )
 // })
 
-export default Hello
+// export default Hello
