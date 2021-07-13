@@ -59,3 +59,4 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'pry-rails'
+gem 'mini_racer', platforms: :ruby
