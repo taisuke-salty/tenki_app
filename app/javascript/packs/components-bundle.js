@@ -2,11 +2,26 @@ import ReactOnRails from 'react-on-rails';
 
 import HelloWorld from '../bundles/HelloWorld/components/HelloWorld';
 import Evaluation from '../components/Evaluation';
+import Card from '../components/Card';
+import indexCalendar from '../components/indexCalendar';
+import MotivatedImg from '../components/MotivatedImg';
+import Motivation from '../components/Motivation';
+import NikkiTest from '../components/NikkiTest';
+import NotMotivatedImg from '../components/NotMotivatedImg';
+import PieChart from '../components/PieChart';
+
 
 // This is how react_on_rails can see the HelloWorld in the browser.
 ReactOnRails.register({
   HelloWorld,
-  Evaluation
+  Evaluation,
+  Card,
+  indexCalendar,
+  MotivatedImg,
+  Motivation,
+  NikkiTest,
+  NotMotivatedImg,
+  PieChart
 });
 
 

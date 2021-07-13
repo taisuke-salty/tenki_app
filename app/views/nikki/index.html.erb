@@ -10,16 +10,16 @@
       <div class="condition">
         <div class="evaluation-area">
           <p class="index-title">評価</p>
-          <%= react_component("Evaluation", num: @evaluation) %>
+          <%= react_component("Evaluation", props: {num: @evaluation}) %>
         </div>
-        <%= react_component("Motivation", num: @motivation) %>
+        <%= react_component("Motivation", props: {num: @motivation}) %>
       </div>
       <div class="emotion-aggregate">
         <div class="index-title">感情カードの割合</div>
 
 
         <div class="emotion-graph">
-          <%= react_component("PieChart", cardsHappy: @cardsHappy, cardsGrad: @cardsGrad, cardsSad: @cardsSad, cardsAngry: @cardsAngry) %>
+          <%= react_component("PieChart", props: {cardsHappy: @cardsHappy, cardsGrad: @cardsGrad, cardsSad: @cardsSad, cardsAngry: @cardsAngry}) %>
         </div>
       </div>
       <div class="emotion-card-section">
@@ -28,7 +28,7 @@
           <p class="index-title">楽しい</p>
           <div class="cards-area">
             <% @cardsHappy.each do |card| %>
-              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
             <% end %>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <p class="index-title">嬉しい</p>
           <div class="cards-area">
             <% @cardsGrad.each do |card| %>
-              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
             <% end %>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <p class="index-title">悲しい</p>
           <div class="cards-area">
             <% @cardsSad.each do |card| %>
-              <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
             <% end %>
           </div>
         </div>
@@ -53,7 +53,7 @@
         <p class="index-title">怒り</p>
         <div class="cards-area">
           <% @cardsAngry.each do |card| %>
-            <%= react_component("Card", cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]) %>
+            <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
           <% end %>
         </div>
       </div>
@@ -71,7 +71,7 @@
       </div>
 
     </div>
-    <%= react_component("NikkiTest",  test: @cards) %>
+    <%= react_component("NikkiTest",  props: {test: @cards}) %>
 
 
 </main>
