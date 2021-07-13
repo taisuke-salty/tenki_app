@@ -3,7 +3,7 @@ import ReactOnRails from 'react-on-rails';
 import HelloWorld from '../bundles/HelloWorld/components/HelloWorld';
 import Evaluation from '../components/Evaluation';
 import Card from '../components/Card';
-import indexCalendar from '../components/indexCalendar';
+import IndexCalendar from '../components/indexCalendar';
 import MotivatedImg from '../components/MotivatedImg';
 import Motivation from '../components/Motivation';
 import NikkiTest from '../components/NikkiTest';
@@ -16,7 +16,7 @@ ReactOnRails.register({
   HelloWorld,
   Evaluation,
   Card,
-  indexCalendar,
+  IndexCalendar,
   MotivatedImg,
   Motivation,
   NikkiTest,

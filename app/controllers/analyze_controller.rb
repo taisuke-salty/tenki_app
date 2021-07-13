@@ -6,7 +6,7 @@ class AnalyzeController < ApplicationController
     # binding.pry
     set_condition
     set_cards
-    binding.pry
+    # binding.pry
 
     respond_to do |format|
       format.html
