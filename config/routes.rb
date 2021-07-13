@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'hello_world', to: 'hello_world#index'
   get 'analyze/a_day'  => "analyze#a_day"
   get 'analyze/today_day'  => "analyze#today_day"
   # get 'analyze/:year/:month/:day' => "analyze#a_day"
