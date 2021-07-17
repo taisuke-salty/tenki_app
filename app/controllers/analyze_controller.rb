@@ -31,11 +31,18 @@ class AnalyzeController < ApplicationController
 
     def set_cards
       # binding.pry
-      @cards = Card.where(feel_on: @a_day.in_time_zone.all_day, user_id: current_user.id)
-      @cardsHappy = @cards.where(feeling: 1)
-      @cardsGrad = @cards.where(feeling: 2)
-      @cardsSad = @cards.where(feeling: 3)
-      @cardsAngry = @cards.where(feeling: 4)
+      notExsit = nil
+
+      @cardsAll = Card.where(feel_on: @a_day.in_time_zone.all_day, user_id: current_user.id)
+      @cards = []
+
+      for i in 1..4 do
+        @cards[i] = @cardsAll.where(feeling: i)
+      end
+
+      # @cardsGrad = @cards.where(feeling: 2)
+      # @cardsSad = @cards.where(feeling: 3)
+      # @cardsAngry = @cards.where(feeling: 4)
           # https://techracho.bpsinc.jp/hachi8833/2016_08_19/24876
     end
 

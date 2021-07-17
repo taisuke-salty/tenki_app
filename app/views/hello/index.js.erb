@@ -1,0 +1,12 @@
+$('#test_day').html(
+  "<%= j('選択した日の日付' + @ajax_prac_day) %>"
+);
+
+$('#test_condition').html(
+  # この書き方の場合、@condition_idはstringではないといけないらしい。
+  "<%= j('選択した日のcondition' + @condition_id) %>"
+);
+
+
+console.log("index.js.erb")
+alert('呼ばれた！！');

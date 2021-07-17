@@ -78,21 +78,30 @@
   <div class="upper-body">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <p> dzfa </p>
   </div>
   <div class="main-frame">
     <%= yield %>
-    <section>
-      <h1>指定した日付の評価を見る</h1>
-      <button id="prev" type="button">前の月</button>
-      <button id="next" type="button">次の月</button>
-      <div id="calendar-prac"></div>
-      <%= form_tag("/analyze/a_day", method: "get") do %>
-        <!-- TODO: ヘルパーメソッド使う -->
-        <input type="date" name="a_day" value="<%=Date.today%>">
-        <input type="submit" value="表示">
-      <% end %>
-    </section>
+
+
+    <div class="main-right">
+      <div class="calender-area">
+        <%= react_component("IndexCalendar") %>
+      </div>
+      <div class="whether-frame">
+        <p class="index-title"><%= @a_day %>の天気</p>
+        <div class="whether-img-area">
+          <%= image_tag  "sun.svg", class:"sunny"  %>
+        </div>
+      </div>
+
+        <%= form_tag("/analyze/a_day", method: "get") do %>
+          <!-- TODO: ヘルパーメソッド使う -->
+          <input type="date" name="a_day" value="<%=Date.today%>">
+          <input type="submit" value="表示">
+        <% end %>
+      </div>
+
+    </div>
   </div>
 
   <footer>

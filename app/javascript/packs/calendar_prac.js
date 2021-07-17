@@ -126,20 +126,22 @@ document.addEventListener("click", function(e){
       // 実行したいactionへのpathに置き換えてください。
       // 例えば users_controller の create アクションなどの場合は
       // /users/create などとなると思います。
-      url: '/analyze/a_day',
+      url: '/hello/index',
       // GET, POST, PUT, DELETEなどを設定します。
       type: 'GET',
       // urlにつけるパラメータを指定します。
       data: {
         // JSの変数の中のデータをRailsに渡します。
         // Rails からは parmas[:hoge] で受け取れます。
-        a_day: el.year + '-' + el.month + '-' + el.date
+        ajax_prac_day: el.year + '-' + el.month + '-' + el.date
       },
+      // これをつけないと、railsのcontrollerで　JS　formatで処理してくれない。
+            dataType: "script"
     })
     .done(function(response){
       // Railsのアクションが正しく実行された時の処理
       console.log("ajax is worked");
-      console.log(response);
+      // console.log(response);
     })
     .fail(function(xhr){
       // Railsのアクションなどでエラーが発生した時の処理

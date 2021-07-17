@@ -15,7 +15,7 @@
 
 
         <div class="emotion-graph">
-          <%= react_component("PieChart", props: {cardsHappy: @cardsHappy, cardsGrad: @cardsGrad, cardsSad: @cardsSad, cardsAngry: @cardsAngry}) %>
+          <%= react_component("PieChart", props: {cardsHappy: @cards[1], cardsGrad: @cards[2], cardsSad: @cards[3], cardsAngry: @cards[4]}) %>
         </div>
       </div>
       <div class="emotion-card-section">
@@ -23,7 +23,7 @@
         <div class="cards-frame" >
           <p class="index-title">楽しい</p>
           <div class="cards-area">
-            <% @cardsHappy.each do |card| %>
+            <% @cards[1].each do |card| %>
               <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
@@ -31,7 +31,7 @@
         <div class="cards-frame" >
           <p class="index-title">嬉しい</p>
           <div class="cards-area">
-            <% @cardsGrad.each do |card| %>
+            <% @cards[2].each do |card| %>
               <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
@@ -39,7 +39,7 @@
         <div class="cards-frame" >
           <p class="index-title">悲しい</p>
           <div class="cards-area">
-            <% @cardsSad.each do |card| %>
+            <% @cards[3].each do |card| %>
               <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
@@ -48,25 +48,17 @@
       <div class="cards-frame" >
         <p class="index-title">怒り</p>
         <div class="cards-area">
-          <% @cardsAngry.each do |card| %>
+        <% if @cards[4].present? %>
+          <% @cards[4].each do |card| %>
             <%= react_component("Card", props: {card: card}) %>
-            <% end %>
+          <% end %>
+        <% else %>
+            カードはまだ投稿されていません
+        <% end %>
         </div>
       </div>
     </div>
-    <div class="main-right">
-      <div class="calender-area">
-        <%= react_component("IndexCalendar") %>
-      </div>
-      <div class="whether-frame">
-        <p class="index-title"><%= @a_day %>の天気</p>
-        <div class="whether-img-area">
-          <%= image_tag  "sun.svg", class:"sunny"  %>
 
-        </div>
-      </div>
-
-    </div>
 
 
 </main>

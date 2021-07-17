@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get "hello/index"
 
+  get "hello/ajax_prac"
+
   resources :nikki do                     #tweets_controllerに対してのresourcesメソッド
   end
 
