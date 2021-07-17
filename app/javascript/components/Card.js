@@ -11,8 +11,9 @@ class Card extends React.Component {
     const angry = {cardCls:'card-angry', emtTxt:'怒り', emtCls:'emotion-angry' }
 
     const emts = [happy, grad, sad, angry]
-    const emt = emts[this.props.cardEmt]
+    const emt = emts[this.props.card.feeling-1]
 
+    console.log(emt)
     return (
       <React.Fragment>
         <div className={'card ' + emt.cardCls}>
@@ -20,15 +21,14 @@ class Card extends React.Component {
             {emt.emtTxt}
           </div>
           <div className="card-day day-1">
-            日時：{this.props.cardDate}
+            日時：{new Date(this.props.card.feel_on).toLocaleString("ja")}
           </div>
           {/* reactでは改行＜br＞に特別な処理必要。今は改行を入れないようにする。 */}
           <div className="card-detail-title">詳細：</div>
           <div className="card-detail-text text-card1">
-            {this.props.cardText}
+            {this.props.card.detail}
           </div>
-        </div>
-      </React.Fragment>
+        </div>      </React.Fragment>
     );
   }
 }

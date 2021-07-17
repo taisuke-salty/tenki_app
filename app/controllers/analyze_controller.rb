@@ -19,6 +19,7 @@ class AnalyzeController < ApplicationController
   def today_day
     @a_day = Date.current
     set_cards
+    set_condition
     render("analyze/a_day")
 
   end

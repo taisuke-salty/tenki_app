@@ -5,20 +5,12 @@ import MotivatedImg from './MotivatedImg'
 
 class Motivation extends React.Component {
 
-  // motivationArea = () => {
-  //   let mot = this.props.num
-  //   let notMot = 4-mot
-  //   // JS Push()メソッド： https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/push
-
-
-
-  // }
 
 
 
   render () {
 
-    let mot = this.props.num
+    let mot = this.props.condition[0].motivation
     let notMot = 4-mot
     console.log(mot)
     console.log(notMot)
@@ -30,8 +22,7 @@ class Motivation extends React.Component {
       motivationArea.push(<NotMotivatedImg/>);
     }
 
-    var today = new Date()
-    console.log(today.getFullYear())
+
 
     return (
       <React.Fragment>

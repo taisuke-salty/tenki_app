@@ -2,7 +2,7 @@
 
 
     <div class="main-left">
-      <h2 class="index-title"><%= @date1 %>のあなた</h2>
+      <h2 class="index-title"><%= @a_day %>のあなた</h2>
       <div class="condition">
         <div class="evaluation-area">
           <p class="index-title">評価</p>
@@ -24,7 +24,7 @@
           <p class="index-title">楽しい</p>
           <div class="cards-area">
             <% @cardsHappy.each do |card| %>
-              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
+              <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <p class="index-title">嬉しい</p>
           <div class="cards-area">
             <% @cardsGrad.each do |card| %>
-              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
+              <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <p class="index-title">悲しい</p>
           <div class="cards-area">
             <% @cardsSad.each do |card| %>
-              <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
+              <%= react_component("Card", props: {card: card}) %>
             <% end %>
           </div>
         </div>
@@ -49,8 +49,8 @@
         <p class="index-title">怒り</p>
         <div class="cards-area">
           <% @cardsAngry.each do |card| %>
-            <%= react_component("Card", props: {cardDate: card[:cardDate], cardText: card[:cardText], cardEmt: card[:cardEmt]}) %>
-          <% end %>
+            <%= react_component("Card", props: {card: card}) %>
+            <% end %>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
         <%= react_component("IndexCalendar") %>
       </div>
       <div class="whether-frame">
-        <p class="index-title"><%= @date1 %>の天気</p>
+        <p class="index-title"><%= @a_day %>の天気</p>
         <div class="whether-img-area">
           <%= image_tag  "sun.svg", class:"sunny"  %>
 
@@ -67,7 +67,6 @@
       </div>
 
     </div>
-    <%= react_component("NikkiTest",  props: {test: @cards}) %>
 
 
 </main>
@@ -75,29 +74,3 @@
 
 
 
-<div>
-  <% @conditions.each do |condition| %>
-    <p>condition</p>
-    <p>id: <%= condition.id %></p>
-    <p>user_id: <%= condition.user_id %></p>
-    <p>evaluation: <%= condition.evaluation %></p>
-    <p>motivation: <%= condition.motivation %></p>
-  <% end %>
-
-  <%= @a_day %>
-  <div id="condition_result">condition_ajax</div>
-  <p>================</p>
-
-  <% @cards.each do |card| %>
-    <p>card</p>
-    <p>id: <%= card.id %></p>
-    <p>user_id: <%= card.user_id %></p>
-    <p>feel_on: <%= card.feel_on %></p>
-    <p>feeling: <%= card.feeling %></p>
-    <p>detail: <%= card.detail %></p>
-    <p>---------------</p>
-
-  <% end %>
-
-  <div id="caer_result">card_ajax</div>
-</div>
