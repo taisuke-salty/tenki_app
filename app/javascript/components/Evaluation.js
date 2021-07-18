@@ -9,7 +9,7 @@ class Evaluation extends React.Component {
 
   render () {
     const imgs = ['/assets/happy1@2x.png','/assets/happy2@2x.png','/assets/happy3.png','/assets/happy4.png']
-    console.log('this props:' + this.props.condition[0].evaluation)
+    console.log('this props:' + this.props.condition.evaluation)
     // const img1 = '/assets/happy1@2x.png'
     // const img2 = '/assets/happy2@2x.png'
     // const img3 = '/assets/happy3.png'
@@ -36,7 +36,7 @@ class Evaluation extends React.Component {
     return (
       <React.Fragment>
           <div className="evaluation-img-area" >
-          <img src={imgs[this.props.condition[0].evaluation]} className="evaluation-img" />
+          <img src={imgs[this.props.condition.evaluation]} className="evaluation-img" />
           </div>
       </React.Fragment>
     );

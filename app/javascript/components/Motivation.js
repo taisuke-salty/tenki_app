@@ -10,22 +10,22 @@ class Motivation extends React.Component {
 
   render () {
 
-    let mot = this.props.condition[0].motivation
+    let mot = this.props.condition.motivation
     let notMot = 4-mot
     console.log(mot)
     console.log(notMot)
     const motivationArea= [];
     for(let i = 1; i <= mot; i += 1 ){
-      motivationArea.push(<MotivatedImg/>);
+      motivationArea.push(<MotivatedImg num={i} />);
     }
     for(let i = 1; i <= notMot; i += 1 ){
-      motivationArea.push(<NotMotivatedImg/>);
+      motivationArea.push(<NotMotivatedImg num={i + mot}/>);
     }
 
 
 
     return (
-      <React.Fragment>
+      <React.Fragment>num
         <div className="motivation-area">
           <p className="index-title">モチベーション</p>
           {motivationArea}

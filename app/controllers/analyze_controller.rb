@@ -26,23 +26,18 @@ class AnalyzeController < ApplicationController
 
   private
     def set_condition
-      @conditions = Condition.where(evaluate_on: @a_day, user_id: current_user.id)
+      @conditions = Condition.where(evaluate_on: @a_day, user_id: current_user.id).first
+      # whereでとってきたものは、ActiveRecord:Relationの配列のオブジェクト。
+      # このままReactにわたすと他のインスタンスと違って配列で渡ってしまうので、.firstでひとつのハッシュにしてから渡す
     end
 
     def set_cards
-      # binding.pry
-      notExsit = nil
-
       @cardsAll = Card.where(feel_on: @a_day.in_time_zone.all_day, user_id: current_user.id)
       @cards = []
-
       for i in 1..4 do
         @cards[i] = @cardsAll.where(feeling: i)
       end
 
-      # @cardsGrad = @cards.where(feeling: 2)
-      # @cardsSad = @cards.where(feeling: 3)
-      # @cardsAngry = @cards.where(feeling: 4)
           # https://techracho.bpsinc.jp/hachi8833/2016_08_19/24876
     end
 
